@@ -6,5 +6,5 @@ services:
       - "3000:3000"
     environment:
       - API_BACKEND=development
-    volumes:
-      - /tmp/ficheros-contenedor:/var/ficheros
+    # volumes:
+    #   - /tmp/ficheros-contenedor:/var/ficheros

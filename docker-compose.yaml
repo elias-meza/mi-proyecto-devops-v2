@@ -1,0 +1,10 @@
+services:
+  mi-proyecto-devops:
+    image: localhost:8082/mi-proyecto-devops
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - API_BACKEND=development
+    volumes:
+      - /tmp/ficheros-contenedor:/var/ficheros

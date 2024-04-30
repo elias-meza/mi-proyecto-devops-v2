@@ -1,10 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage("pipeline node") {
+        stage('pipeline node') {
             agent {
-                docker { 
-                    image 'node:20.11.1-alpine3.19' 
+                docker {
+                    image 'node:20.11.1-alpine3.19'
                     reuseNode true
                 }
             }
@@ -26,7 +26,7 @@ pipeline {
                 }
             }
         }
-        stage('Delivery to docker') {
+        stage('delivery to docker') {
             steps {
                 script {
                     docker.withRegistry('http://localhost:8082', 'nexus-key') {
@@ -38,7 +38,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to compose') {
+        stage('deploy to compose') {
             steps {
                 script {
                     docker.withRegistry('http://localhost:8082', 'nexus-key') {
